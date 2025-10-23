@@ -97,7 +97,7 @@
         box-shadow: 0 25px 50px rgba(231, 111, 81, 0.25);
       }
 
-      /* Gradient Text */
+      /* Enhanced Gradient Text */
       .gradient-text {
         background: linear-gradient(
           135deg,
@@ -118,11 +118,13 @@
         }
       }
 
-      /* Custom Button Hover */
+      /* Enhanced Button Styles */
       .btn-custom {
         position: relative;
         overflow: hidden;
         transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(231, 111, 81, 0.3);
+        z-index: 1;
       }
 
       .btn-custom::before {
@@ -135,10 +137,15 @@
         background: linear-gradient(
           120deg,
           transparent,
-          rgba(255, 255, 255, 0.3),
+          rgba(255, 255, 255, 0.4),
           transparent
         );
-        transition: left 0.5s;
+        transition: left 0.6s;
+      }
+
+      .btn-custom:hover {
+        box-shadow: 0 6px 25px rgba(231, 111, 81, 0.5);
+        transform: translateY(-2px);
       }
 
       .btn-custom:hover::before {
