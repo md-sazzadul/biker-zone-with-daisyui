@@ -30,6 +30,31 @@
         scroll-behavior: smooth;
       }
 
+      /* Gradient Background */
+      .hero-gradient {
+        background: linear-gradient(
+          135deg,
+          rgba(231, 111, 81, 0.05) 0%,
+          rgba(231, 111, 81, 0.15) 100%
+        );
+      }
+
+      /* Smooth Animations */
+      .fade-in {
+        animation: fadeIn 0.6s ease-in;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
       /* Gradient Text */
       .gradient-text {
         background: linear-gradient(135deg, #e76f51 0%, #f4a261 100%);
@@ -63,6 +88,21 @@
 
       .btn-custom:hover::before {
         left: 100%;
+      }
+
+      /* Bike Image Animation */
+      .bike-showcase {
+        animation: float 3s ease-in-out infinite;
+      }
+
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-15px);
+        }
       }
     </style>
 
@@ -180,88 +220,154 @@
       </nav>
 
       <!-- Slider/Carousel -->
-      <div class="carousel w-full lg:h-[550px] bg-bike-primary-bg">
+      <div id="home" class="carousel w-full lg:h-[600px] hero-gradient">
         <!-- Slide 1 -->
-        <div id="slide1" class="carousel-item relative w-full">
-          <div class="flex flex-col lg:flex-row p-12 lg:p-24">
+        <div id="slide1" class="carousel-item relative w-full fade-in">
+          <div class="flex flex-col lg:flex-row p-8 lg:p-24 items-center gap-8">
             <!-- text content -->
             <div class="space-y-7 flex-1">
-              <h2 class="text-6xl font-bold">
-                Ride-on R15 V4 <br />
+              <h2 class="text-5xl lg:text-7xl font-bold leading-tight">
+                Ride-on <span class="gradient-text">R15 V4</span> <br />
                 with Smile
               </h2>
-              <p>
-                Amet minim mollit non deserunt ullamco est sit aliqua dolor do
-                amet sint. Velit officia consequat duis enim velit mollit.
+              <p class="text-gray-600 text-lg leading-relaxed max-w-md">
+                Experience the ultimate riding pleasure with cutting-edge
+                technology and unmatched performance. Your journey begins here.
               </p>
-              <button class="btn bg-bike-primary text-white">Purchase</button>
+              <div class="flex gap-4">
+                <button
+                  class="btn bg-bike-primary text-white border-none hover:bg-bike-secondary btn-custom px-8"
+                >
+                  Purchase Now
+                </button>
+                <button
+                  class="btn btn-outline border-bike-primary text-bike-primary hover:bg-bike-primary hover:text-white"
+                >
+                  Learn More
+                </button>
+              </div>
             </div>
             <!-- image content -->
-            <div class="flex-1">
-              <img src="./images/slider/bike1.png" class="w-[400px]" />
+            <div class="flex-1 flex justify-center">
+              <img
+                src="./images/slider/bike1.png"
+                class="w-full max-w-[500px] bike-showcase drop-shadow-2xl"
+              />
             </div>
           </div>
           <div
             class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between"
           >
-            <a href="#slide3" class="btn btn-circle">❮</a>
-            <a href="#slide2" class="btn btn-circle">❯</a>
+            <a
+              href="#slide3"
+              class="btn btn-circle hover:bg-bike-primary hover:text-white transition-all"
+              >❮</a
+            >
+            <a
+              href="#slide2"
+              class="btn btn-circle hover:bg-bike-primary hover:text-white transition-all"
+              >❯</a
+            >
           </div>
         </div>
 
         <!-- Slide 2 -->
         <div id="slide2" class="carousel-item relative w-full">
-          <div class="flex flex-col lg:flex-row p-12 lg:p-24">
+          <div class="flex flex-col lg:flex-row p-8 lg:p-24 items-center gap-8">
             <!-- text content -->
             <div class="space-y-7 flex-1">
-              <h2 class="text-6xl font-bold">
-                Ride-on R15 V4 <br />
-                with Smile
+              <h2 class="text-5xl lg:text-7xl font-bold leading-tight">
+                Unleash Your <span class="gradient-text">Freedom</span> <br />
+                on the Road
               </h2>
-              <p>
-                Amet minim mollit non deserunt ullamco est sit aliqua dolor do
-                amet sint. Velit officia consequat duis enim velit mollit.
+              <p class="text-gray-600 text-lg leading-relaxed max-w-md">
+                Feel the power of precision engineering combined with elegant
+                design. Every ride becomes an adventure.
               </p>
-              <button class="btn bg-bike-primary text-white">Purchase</button>
+              <div class="flex gap-4">
+                <button
+                  class="btn bg-bike-primary text-white border-none hover:bg-bike-secondary btn-custom px-8"
+                >
+                  Purchase Now
+                </button>
+                <button
+                  class="btn btn-outline border-bike-primary text-bike-primary hover:bg-bike-primary hover:text-white"
+                >
+                  Learn More
+                </button>
+              </div>
             </div>
             <!-- image content -->
-            <div class="flex-1">
-              <img src="./images/slider/bike2.png" class="w-[400px]" />
+            <div class="flex-1 flex justify-center">
+              <img
+                src="./images/slider/bike2.png"
+                class="w-full max-w-[500px] bike-showcase drop-shadow-2xl"
+              />
             </div>
           </div>
           <div
             class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between"
           >
-            <a href="#slide1" class="btn btn-circle">❮</a>
-            <a href="#slide3" class="btn btn-circle">❯</a>
+            <a
+              href="#slide1"
+              class="btn btn-circle hover:bg-bike-primary hover:text-white transition-all"
+              >❮</a
+            >
+            <a
+              href="#slide3"
+              class="btn btn-circle hover:bg-bike-primary hover:text-white transition-all"
+              >❯</a
+            >
           </div>
         </div>
 
         <!-- Slide 3 -->
-        <div id="slide3" class="carousel-item relative w-full">
-          <div class="flex flex-col lg:flex-row p-12 lg:p-24">
+        <div id="slide3" class="carousel-item relative w-full fade-in">
+          <div class="flex flex-col lg:flex-row p-8 lg:p-24 items-center gap-8">
             <!-- text content -->
             <div class="space-y-7 flex-1">
-              <h2 class="text-6xl font-bold">
-                Ride-on R15 V4 <br />
-                with Smile
+              <h2 class="text-5xl lg:text-7xl font-bold leading-tight">
+                Performance <span class="gradient-text">Meets</span> <br />
+                Elegance
               </h2>
-              <p>
-                Amet minim mollit non deserunt ullamco est sit aliqua dolor do
-                amet sint. Velit officia consequat duis enim velit mollit.
+              <p class="text-gray-600 text-lg leading-relaxed max-w-md">
+                Discover the perfect harmony of speed, style, and
+                sophistication. Your dream bike awaits.
               </p>
-              <button class="btn bg-bike-primary text-white">Purchase</button>
+              <div class="flex gap-4">
+                <button
+                  class="btn bg-bike-primary text-white border-none hover:bg-bike-secondary btn-custom px-8"
+                >
+                  Purchase Now
+                </button>
+                <button
+                  class="btn btn-outline border-bike-primary text-bike-primary hover:bg-bike-primary hover:text-white"
+                >
+                  Learn More
+                </button>
+              </div>
             </div>
             <!-- image content -->
-            <div class="flex-1">
-              <img src="./images/slider/bike3.png" class="w-[400px]" />
+            <div class="flex-1 flex justify-center">
+              <img
+                src="./images/slider/bike3.png"
+                class="w-full max-w-[500px] bike-showcase drop-shadow-2xl"
+              />
             </div>
           </div>
           <div
             class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between"
           >
-            <a href="#slide2" class="btn btn-circle">❮</a>
-            <a href="#slide1" class="btn btn-circle">❯</a>
+            <a
+              href="#slide2"
+              class="btn btn-circle hover:bg-bike-primary hover:text-white transition-all"
+              >❮</a
+            >
+            <a
+              href="#slide1"
+              class="btn btn-circle hover:bg-bike-primary hover:text-white transition-all"
+              >❯</a
+            >
           </div>
         </div>
       </div>
