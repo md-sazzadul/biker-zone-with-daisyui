@@ -371,6 +371,30 @@
         opacity: 1;
       }
 
+      /* Enhanced navigation links */
+      .nav-link {
+        position: relative;
+        transition: all 0.3s ease;
+        padding: 0.5rem 1rem;
+      }
+
+      .nav-link::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;
+        height: 3px;
+        background: linear-gradient(90deg, #e76f51, #f4a261, #e9c46a);
+        transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        border-radius: 2px;
+      }
+
+      .nav-link:hover::after {
+        width: 90%;
+      }
+
       /* Number counter animation */
       .stat-number {
         font-size: 2.5rem;
